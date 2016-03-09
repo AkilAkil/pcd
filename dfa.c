@@ -43,7 +43,7 @@ emov[emovp++]=clr[j];
 for(i=0;i<emovp;i++) // sorting
 for(j=i+1;j<emovp;j++)
 if(emov[i]<emov[j])
-emov[i]=emov[j]+emov[i]-(emov[j]=emov[i]); //woking til here
+emov[i]=emov[j]+emov[i]-(emov[j]=emov[i]); //woking till here
 //disparray(emov,emovp);
 for(i=0;i<dfap;i++)
 if(anagram(dfa[i],emov,emovp)==1)
@@ -57,8 +57,6 @@ dfap++;
 }
 if(emovp==0) return;
 table[x.name-'A'][i]=sym;
-/*for(i=0;i<movp;i++)
-printf(" %d",mov[i]);*/
 }
 int eclose(int node) //done
 {int i;
@@ -101,15 +99,10 @@ for(i=0;i<clrp;i++)
 clr[i]=clr[j]+clr[i]-(clr[j]=clr[i]);}
 dfa[0].states[i]=clr[i];}
 dfap=1;
-//disp(dfa[0]);
-//move(dfa[0],'a');
-//printf("%d",dfap);
-//disp(dfa[1]);
-//this works down
 for(i=0;i<dfap;i++)
 for(j=0;j<symbols;j++)
 move(dfa[i],j+'a');
-i=dfap-1;// ambiguity
+i=dfap-1;
 while(dfa[i--].n==0)
 dfap--;
 printf("\n\nDFA : \n");
